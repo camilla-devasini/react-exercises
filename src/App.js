@@ -1,5 +1,5 @@
 import React from 'react';
-import SayHello from './components/HelloTitle.js';
+import SayHello from './components/helloTitle.js';
 
 
 class App extends React.Component {
