@@ -5,7 +5,10 @@ import SayHello from './components/helloTitle.js';
 class App extends React.Component {
     render() {
         return (
-            <SayHello />
+            <div>
+                <SayHello />
+            </div>
+            
         )
     }
 
