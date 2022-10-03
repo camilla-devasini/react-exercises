@@ -1,20 +1,23 @@
 import React from "react";
-import Age from "./Age.js";
+import Age from "./Age";
+
+
 
 class Welcome extends React.Component {
     render() {
-        //or with Destructuring i can do: const {name, age} = this.props
-        //and than in the return i can insert the props only calling {name} and {age}
-      
-        return (
-            <>
-                <p>Welcome {this.props.name}!</p>
-                <Age age={this.props.age} />
-            </> 
-        ) 
-    
-    }   
-}
+        
+        if (this.props.age > 18) {
+            return (
+                <>
+                    <p>Welcome {this.props.name}!</p>
+                    <Age age={this.props.age} />
+                </>
+            )
+        } else {
+            return <p>Welcome {this.props.name}!</p>
+        }
+    }
+} 
 
 //What happens if no name prop is passed to the Welcome component?
 // In that case no name will be rendered, only the "Welcome!" string. 
