@@ -2,7 +2,14 @@ import React from "react";
 
 class Welcome extends React.Component {
     render() {
-        return <p>Welcome {this.props.name}!</p>
+       // Or with destructuring i can do: const {name, age} = this.props; and in return part only {name} ahd {age} to insert the props.
+        return (
+            <>
+                <p>Welcome {this.props.name}!</p>
+                <p>Your age is {this.props.age}</p>
+            </>
+       
+        )
     }   
 }
 
