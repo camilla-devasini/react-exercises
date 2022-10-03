@@ -1,4 +1,5 @@
 import React from "react";
+import Age from "./Age.js";
 
 class Welcome extends React.Component {
     render() {
@@ -8,9 +9,8 @@ class Welcome extends React.Component {
         return (
             <>
                 <p>Welcome {this.props.name}!</p>
-                <p>Your age is {this.props.age}</p>
-            </>
-
+                <Age age={this.props.age} />
+            </> 
         ) 
     
     }   
