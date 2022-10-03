@@ -6,7 +6,7 @@ import Age from "./Age";
 class Welcome extends React.Component {
     render() {
         
-        if (this.props.age) {
+        if (this.props.age > 18 && this.props.age < 65) {
             return (
                 <>
                     <p>Welcome {this.props.name}!</p>
