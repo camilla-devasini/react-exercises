@@ -1,5 +1,6 @@
 import React from 'react';
 import SayHello from './components/helloTitle.js';
+import Welcome from './components/Welcome.js';
 
 
 class App extends React.Component {
@@ -7,11 +8,10 @@ class App extends React.Component {
         return (
             <div>
                 <SayHello />
-            </div>
-            
+                <Welcome name = "Camilla" />
+            </div>    
         )
     }
-
 }
 
 export default App;
