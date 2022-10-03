@@ -2,8 +2,16 @@ import React from "react";
 
 class Welcome extends React.Component {
     render() {
+        //or with Destructuring i can do: const {name, age} = this.props
+        //and than in the return i can insert the props only calling {name} and {age}
       
-        return <p>Welcome {this.props.name}!</p>
+        return (
+            <>
+                <p>Welcome {this.props.name}!</p>
+                <p>Your age is {this.props.age}</p>
+            </>
+
+        ) 
     
     }   
 }
