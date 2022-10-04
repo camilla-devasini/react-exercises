@@ -15,8 +15,7 @@ class Welcome extends React.Component {
                     <Age age={this.props.age} />
                 </>
             )
-        } 
-            
+        }      
     }
 } 
 
