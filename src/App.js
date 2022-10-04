@@ -9,7 +9,6 @@ class App extends React.Component {
             <div>
                 <SayHello />
                 <Welcome name={"Jhon"} age="28" />
-    
             </div>    
         )
     }

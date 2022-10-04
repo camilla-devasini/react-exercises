@@ -5,19 +5,18 @@ import Age from "./Age";
 // this.props.age > 18 && this.props.age < 65 && 
 class Welcome extends React.Component {
     render() {
+        let adultRange = this.props.age > 18 || this.props.age < 65; 
     
-        if (this.props.age > 18 && this.props.age < 65 && this.props.name == 'Jhon') {
+        if (adultRange && this.props.name == 'Jhon' || (!adultRange || this.props.name != 'Jhon')) {
+            
             return (
                 <>
                     <p>Welcome {this.props.name && <strong>{this.props.name}</strong>}!</p>
                     <Age age={this.props.age} />
-                    
                 </>
             )
-        } else {
-            return <p>Welcome {this.props.name && <strong>{this.props.name}</strong>}!</p>
-              
-        }
+        } 
+            
     }
 } 
 
