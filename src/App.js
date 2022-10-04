@@ -1,6 +1,7 @@
 import React from 'react';
 import SayHello from './components/helloTitle.js';
 import Welcome from './components/Welcome.js';
+import Counter from './components/Counter.js';
 
 class App extends React.Component {
     render() {
@@ -9,6 +10,7 @@ class App extends React.Component {
             <div>
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
+                <Counter />
             </div>    
         )
     }
