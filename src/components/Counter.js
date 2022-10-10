@@ -33,7 +33,7 @@ class Counter extends React.Component {
       clearInterval(this.interval);
     }
 
-    componentWillUpdate() { // componentWillUpdate is not recommended for use anymore https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
+    componentDidUpdate() { 
       this.setState((state) => {
       if (state.count > 10 ) {
         return {count: this.props.initialValue};
