@@ -15,20 +15,27 @@ class Counter extends React.Component {
             count: this.props.initialValue
         }
 
-       
+        // Exercise State 05
+        // Reset the counter to the initial value received as a prop when the value is greater than ten times that initial value.
+        
         setInterval(() => {
           this.setState((state) => {
-              return {count: state.count + this.props.increment}
-
+            if (state.count >= 10 ) {
+              return {count: this.props.initialValue};
+            } else {
+              return  {count: state.count + this.props.increment}
+            }
           })
         }, this.props.interval )
       }
 
 
-    
     render() {
-        return <CounterDisplay counterValue={this.state.count} />
-        
+        return (
+        <div>
+          <CounterDisplay counterValue={this.state.count} />
+        </div>
+        )
     }
 }
 

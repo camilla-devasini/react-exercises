@@ -12,3 +12,5 @@
 // When calling setState to increment the counter, should the parameter be a function or an object?
 //Why?  We need to pass a callback function carrying the current state, because we need to work with
 // the last version of the state.
+
+    
