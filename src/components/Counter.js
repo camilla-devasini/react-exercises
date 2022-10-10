@@ -21,7 +21,12 @@ class Counter extends React.Component {
 // Ho notato che il render raddoppia i risultati, ciò non succede se rimuovo <React.StrictMode>
 // dal metodo root.render in index.js
     componentDidMount() {
+<<<<<<< HEAD
       setInterval(() => {
+=======
+
+      this.interval = setInterval(() => {
+>>>>>>> component-lifecycle-02
         this.setState((state) => {
           if (state.count >= 10 ) {
             return {count: this.props.initialValue};
@@ -32,6 +37,11 @@ class Counter extends React.Component {
         })
       }, this.props.interval)
     }
+
+    componentWillUnmount() {
+      clearInterval(this.interval);
+    }
+
 
     render() {
       
