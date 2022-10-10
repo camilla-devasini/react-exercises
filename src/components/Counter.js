@@ -21,25 +21,25 @@ class Counter extends React.Component {
 // Ho notato che il render raddoppia i risultati, ciò non succede se rimuovo <React.StrictMode>
 // dal metodo root.render in index.js
     componentDidMount() {
-<<<<<<< HEAD
-      setInterval(() => {
-=======
-
       this.interval = setInterval(() => {
->>>>>>> component-lifecycle-02
         this.setState((state) => {
-          if (state.count >= 10 ) {
-            return {count: this.props.initialValue};
-          } else {
-            console.log(state.count);
             return  {count: state.count + this.props.increment}
-          }
+          
         })
       }, this.props.interval)
     }
 
     componentWillUnmount() {
       clearInterval(this.interval);
+    }
+
+    componentWillUpdate() { // componentWillUpdate is not recommended for use anymore https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html
+      this.setState((state) => {
+      if (state.count > 10 ) {
+        return {count: this.props.initialValue};
+      }
+    })
+
     }
 
 
