@@ -22,7 +22,7 @@ class Counter extends React.Component {
 // dal metodo root.render in index.js
     componentDidMount() {
 
-      setInterval(() => {
+      this.interval = setInterval(() => {
         this.setState((state) => {
           if (state.count >= 10 ) {
             return {count: this.props.initialValue};
@@ -32,6 +32,11 @@ class Counter extends React.Component {
         })
       }, this.props.interval)
     }
+
+    componentWillUnmount() {
+      clearInterval(this.interval);
+    }
+
 
     render() {
         return (
