@@ -10,26 +10,28 @@ class Counter extends React.Component {
     
     constructor (props) {
         super(props)
-
         this.state = {    //initial value
             count: this.props.initialValue
         }
+    }
+// Is the constructor still required? In my opinion yes, it is required, since
+// the constructor initalizes the state, then the componentDidMount is called once
+// the component mounts.
 
-        // Exercise State 05
-        // Reset the counter to the initial value received as a prop when the value is greater than ten times that initial value.
-        
-        setInterval(() => {
-          this.setState((state) => {
-            if (state.count >= 10 ) {
-              return {count: this.props.initialValue};
-            } else {
-              return  {count: state.count + this.props.increment}
-            }
-          })
-        }, this.props.interval )
-      }
+// Ho notato che il render raddoppia i risultati, ciò non succede se rimuovo <React.StrictMode>
+// dal metodo root.render in index.js
+    componentDidMount() {
 
-
+      setInterval(() => {
+        this.setState((state) => {
+          if (state.count >= 10 ) {
+            return {count: this.props.initialValue};
+          } else {
+            return  {count: state.count + this.props.increment}
+          }
+        })
+      }, this.props.interval)
+    }
 
     render() {
         return (
