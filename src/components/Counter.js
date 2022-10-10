@@ -11,15 +11,15 @@ class Counter extends React.Component {
         super(props)
 
         this.state = {    //initial value
-            count: 0
+            count: this.props.initialValue
         }
 
         setInterval(() => {
             this.setState((state) => {
-                return {count: state.count + 1}
+                return {count: state.count + this.props.increment}
 
             })
-        }, 1000 )
+        }, this.props.interval )
     }
 
 
@@ -29,6 +29,7 @@ class Counter extends React.Component {
     }
 }
 
+<<<<<<< HEAD
 // import { useState, useEffect } from "react"
 
 
@@ -43,6 +44,23 @@ class Counter extends React.Component {
 
 //     // quando la pagina è totalmente caricata ==> parte il contatore.
 //     useEffect(() => {
+=======
+// Svolto durante la call 1:1 
+// import { useState, useEffect } from "react"
+
+
+// export function Counter() {
+//     const [counter, setCounter] = useState(1000); 
+//     
+//  Permette di 
+//     1. definire la variabile counter - 
+//     2. definire il valore iniziale di counter -
+//     3. definire qual è la chiamata che modificherà il valore di counter
+
+//     // quando la pagina è totalmente caricata ==> parte il contatore.
+//     
+//         useEffect(() => {
+>>>>>>> state-03
 //         const interval = setInterval(() => {
 //           setCounter(counter => counter - 1); //la chiamata che modifica il valore del counter
 //         }, 1000);
@@ -64,4 +82,9 @@ class Counter extends React.Component {
 
 // }
 
+<<<<<<< HEAD
 export default Counter;
+=======
+export default Counter;
+
+>>>>>>> state-03
