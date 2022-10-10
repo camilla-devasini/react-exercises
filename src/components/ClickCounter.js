@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CounterButton from './CounterButton';
 
 const ClickCounter = props => {
     const [counter, setCounter] = useState(0);
@@ -12,7 +13,7 @@ const ClickCounter = props => {
     return (
         <div>
             <h1>{counter}</h1>
-            <button type="button" onClick={clickHandler}>Click to increment</button>
+            <CounterButton onClick={clickHandler}/>
         </div>
     )
 }
