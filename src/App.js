@@ -2,6 +2,7 @@ import React from 'react';
 import SayHello from './components/helloTitle.js';
 import Welcome from './components/Welcome.js';
 import Counter from './components/Counter.js';
+import ClickCounter from './components/ClickCounter.js';
 
 class App extends React.Component {
     render() {
@@ -11,6 +12,7 @@ class App extends React.Component {
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
+                <ClickCounter />
             </div>    
         )
     }
