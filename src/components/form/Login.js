@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import LoginButton from './LoginButton';
+import ResetButton from './ResetButton';
 
 const Login = props => {
 
     const [enteredName, setEnteredName] = useState('');
     const [enteredPassword,setEnteredPassword] = useState('');
-    const [checked, setChecked] = useState('');
-    const [isDisabled, setIsDisabled] = useState(true);
+    const [checked, setChecked] = useState(false);
+    const [isDisabled, setIsDisabled] = useState(false);
 
 
     const nameHandler = event => {
@@ -27,6 +28,14 @@ const Login = props => {
         event.preventDefault();
         
     }
+
+    const resetHandler = (event) => {
+        event.preventDefault();
+        setEnteredName('');
+        setEnteredPassword('');
+        setChecked(false);
+        
+    }
         
    
     return (
@@ -36,8 +45,10 @@ const Login = props => {
             <input type="password" value={enteredPassword} onChange={passwordHandler}></input>
             <div>
                 <label>Remember me</label>
-                <input type="checkbox" value={checked} onChange={checkHandler}></input>
+                <input type="checkbox" checked={checked} onChange={checkHandler}></input>
                 <LoginButton onLogin={loginHandler} onEnable={isDisabled} />
+                <ResetButton onReset={resetHandler} />
+                
             </div>
         </form>
     )
