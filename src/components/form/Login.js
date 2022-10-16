@@ -4,20 +4,20 @@ import ResetButton from './ResetButton';
 
 const Login = props => {
 
-    const [enteredName, setEnteredName] = useState('');
-    const [enteredPassword,setEnteredPassword] = useState('');
+    const [enteredName, setEnteredName] = useState();
+    const [enteredPassword,setEnteredPassword] = useState();
     const [checked, setChecked] = useState(false);
-    const [isDisabled, setIsDisabled] = useState(false);
+    // const [isDisabled, setIsDisabled] = useState(true); Inizialmente avevo usato uno state per il button
 
 
     const nameHandler = event => {
         setEnteredName(event.target.value);
-        setIsDisabled(false);
+        // setIsDisabled(false);
     
     }
     const passwordHandler = event => {
         setEnteredPassword(event.target.value);
-        setIsDisabled(false);
+        // setIsDisabled(false);
         
     }
     const checkHandler = event => {
@@ -46,9 +46,8 @@ const Login = props => {
             <div>
                 <label>Remember me</label>
                 <input type="checkbox" checked={checked} onChange={checkHandler}></input>
-                <LoginButton onLogin={loginHandler} onEnable={isDisabled} />
-                <ResetButton onReset={resetHandler} />
-                
+                <LoginButton onLogin={loginHandler} disabled={!enteredName || !enteredPassword}/>
+                <ResetButton onReset={resetHandler}/>
             </div>
         </form>
     )
