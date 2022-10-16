@@ -4,6 +4,7 @@ import Welcome from './components/Welcome.js';
 import Counter from './components/Counter.js';
 import ClickCounter from './components/ClickCounter.js';
 import ClickTracker from './components/ClickTracker.js';
+import InteractiveWelcome from './components/form/InteractiveWelcome.js';
 
 class App extends React.Component {
     render() {
@@ -15,6 +16,8 @@ class App extends React.Component {
                 <Counter initialValue={0} increment={1} interval={1000} />
                 <ClickCounter />
                 <ClickTracker />
+                <InteractiveWelcome />
+              
             </div>    
         )
     }
