@@ -20,9 +20,11 @@ const TodoList = props => {
         setItems(newItems);
         setInput('');
         console.log(items);
-
-
-    }       
+    }
+    
+    const resetHandler = () => {
+        setItems([]);
+    }
 
     return (
         <div>
@@ -33,6 +35,7 @@ const TodoList = props => {
             </ul>
             <input type="text" onChange={inputChangeHandler} value={input}></input>
             <button onClick={addToListHandler}>Add to list</button>
+            <button onClick={resetHandler}>Delete list</button>
         </div>
     )
 
