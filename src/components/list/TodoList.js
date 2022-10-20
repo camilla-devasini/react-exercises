@@ -18,7 +18,6 @@ const TodoList = props => {
     const addToListHandler = () => {
         const newItems = [...items, input];
         setItems(newItems);
-        setInput('');
         console.log(items);
 
 
@@ -31,7 +30,7 @@ const TodoList = props => {
                     <li key={index}>{item}</li>
               )}
             </ul>
-            <input type="text" onChange={inputChangeHandler} value={input}></input>
+            <input type="text" onChange={inputChangeHandler}></input>
             <button onClick={addToListHandler}>Add to list</button>
         </div>
     )
