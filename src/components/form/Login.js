@@ -1,13 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import LoginButton from './LoginButton';
 import ResetButton from './ResetButton';
 
 const Login = props => {
 
- const usernameInput = useRef();
- const passwordInput = useRef();
- const checkBoxInput = useRef();
- 
+    const usernameInput = useRef();
+    const passwordInput = useRef();
+    const checkBoxInput = useRef();
+
+    useEffect(()=> {
+        usernameInput.current.focus();
+    }, []);
+
 
     
     const loginHandler = (event) => {
@@ -25,7 +29,6 @@ const Login = props => {
         usernameInput.current.value = '';
         passwordInput.current.value = '';
         checkBoxInput.current.checked = false;
-
 
     }
         
