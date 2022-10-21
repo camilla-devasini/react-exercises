@@ -1,51 +1,68 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import LoginButton from './LoginButton';
 import ResetButton from './ResetButton';
 
+//back to controlled component
 const Login = props => {
+  
 
-    const usernameInput = useRef();
-    const passwordInput = useRef();
-    const checkBoxInput = useRef();
-
-    useEffect(()=> {
-        usernameInput.current.focus();
-    }, []);
-
-
+        const [enteredName, setEnteredName] = useState();
+        const [enteredPassword,setEnteredPassword] = useState();
+        const [checked, setChecked] = useState(false);
+        // const [isDisabled, setIsDisabled] = useState(true); Inizialmente avevo usato uno state per il button
     
-    const loginHandler = (event) => {
-        event.preventDefault();
-        const userData = {
-            name: usernameInput.current.value,
-            password: passwordInput.current.value,
-            checkbox: checkBoxInput.current.checked
-        }
-        console.log(userData);
-    }
-
-    const resetHandler = (event) => {
-        event.preventDefault();
-        usernameInput.current.value = '';
-        passwordInput.current.value = '';
-        checkBoxInput.current.checked = false;
-
-    }
+    
+        const nameHandler = event => {
+            setEnteredName(event.target.value);
+            // setIsDisabled(false);
         
-   
-    return (
-        <form>
-            <label>Insert your Username and Password:</label>
-            <input type="text" ref={usernameInput}></input>
-            <input type="password" ref={passwordInput} ></input>
-            <div>
-                <label>Remember me</label>
-                <input type="checkbox" ref={checkBoxInput}></input>
-                <LoginButton onLogin={loginHandler}/>
-                <ResetButton onReset={resetHandler}/>
-            </div>
-        </form>
-    )
-}
+        }
+        const passwordHandler = event => {
+            setEnteredPassword(event.target.value);
+            // setIsDisabled(false);
+            
+        }
+        const checkHandler = event => {
+            setChecked(event.target.checked); 
+        }
+    
+        const loginHandler = (event) => {
+            event.preventDefault();
+            const userData = {
+                name: enteredName,
+                password: enteredPassword,
+                checkbox: checked
+            }
+            console.log(userData);
+            
+        }
 
-export default Login;
+        const resetHandler = () => {
+            setEnteredName('');
+            setEnteredPassword('');
+            setChecked(false);
+        }
+            
+        
+        return (
+            <form>
+                <label>Insert your Username and Password:</label>
+                <input type="text" value={enteredName} onChange={nameHandler}></input>
+                <input type="password" value={enteredPassword} onChange={passwordHandler}></input>
+                <div>
+                    <label>Remember me</label>
+                    <input type="checkbox" checked={checked} onChange={checkHandler}></input>
+                    <LoginButton 
+                        onLogin={loginHandler}
+                        disabled={!enteredName || !enteredPassword}
+                        onCheckPassword={enteredPassword}
+                        
+                       
+                    />
+                    <ResetButton onReset={resetHandler}/>
+                </div>
+            </form>
+            )
+            }
+            
+    export default Login;
