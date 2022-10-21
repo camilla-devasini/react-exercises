@@ -22,6 +22,10 @@ const TodoList = props => {
         console.log(items);
     }
 
+    const resetHandler = () => {
+        setItems([]);
+    }
+
     return (
         <div>
             <ul>
@@ -31,6 +35,7 @@ const TodoList = props => {
             </ul>
             <input type="text" onChange={inputChangeHandler} value={input}></input> 
             <button onClick={addToListHandler}>Add to list</button>
+            <button onClick={resetHandler}>Clear list</button>
         </div>
     )
 }
