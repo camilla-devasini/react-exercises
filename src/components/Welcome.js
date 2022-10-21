@@ -12,7 +12,7 @@ class Welcome extends React.Component {
             
             return (
                 <>
-                    <p>Welcome {this.props.name && <strong>{this.props.name}</strong>}!</p>
+                    <p className="welcome">Welcome {this.props.name && <strong>{this.props.name}</strong>}!</p>
                     <Age age={this.props.age} />
                 </>
             )
