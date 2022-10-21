@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 const TodoList = props => {
    
-   
     const [input, setInput] = useState(''); //per gestire gli input inseriti dall'utente
     const [items, setItems] = useState([]); // per gestire la lista degli items
 
@@ -16,30 +15,23 @@ const TodoList = props => {
     }
 
     const addToListHandler = () => {
-        // const newItems = [...items, input];
         setItems((prevState) => {
             return [...prevState, input]
         })
         console.log(items);
     }
-    
-    const resetHandler = () => {
-        setItems([]);
-    }
 
     return (
         <div>
-          <ul>
-            {items.map((item, index)=> 
+            <ul>
+                {items.map((item, index)=> 
                     <li key={index}>{item}</li>
-              )}
+                )}
             </ul>
             <input type="text" onChange={inputChangeHandler} value={input}></input>
             <button onClick={addToListHandler}>Add to list</button>
-            <button onClick={resetHandler}>Delete list</button>
         </div>
     )
-
 }
 
 export default TodoList;
