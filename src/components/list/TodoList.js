@@ -16,8 +16,10 @@ const TodoList = props => {
     }
 
     const addToListHandler = () => {
-        const newItems = [...items, input];
-        setItems(newItems);
+        // const newItems = [...items, input];
+        setItems((prevState) => {
+            return [...prevState, input]
+        })
         console.log(items);
 
 
