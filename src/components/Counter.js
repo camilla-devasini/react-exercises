@@ -47,7 +47,7 @@ class Counter extends React.Component {
       
         return (
         <div>
-          <CounterDisplay counterValue={this.state.count} />
+          <CounterDisplay counterValue={this.state.count} style={{color: "blue"}} />
         </div>
         )
     }
