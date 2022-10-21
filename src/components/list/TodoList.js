@@ -26,11 +26,20 @@ const TodoList = props => {
         setItems([]);
     }
 
+    const deleteItemHandler = (index) => {
+        setItems((prevState) => {
+            const itemsArray = [...prevState];
+            console.log(itemsArray);
+            itemsArray.splice(index, 1);
+            return itemsArray;
+        })
+    }
+
     return (
         <div>
             <ul>
                 {items.map((item, index)=> 
-                    <li key={index}>{item}</li>
+                        <li key={index}>{item}<button onClick={() => {deleteItemHandler(index)}}>Delete item</button></li>
                 )}
             </ul>
             <input type="text" onChange={inputChangeHandler} value={input}></input> 
