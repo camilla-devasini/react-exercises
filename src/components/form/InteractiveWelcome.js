@@ -14,7 +14,7 @@ const InteractiveWelcome = props => {
         <div>
             <form>
                 <label>Name:</label>
-                <input type="text" value={enteredUsername} onChange={EnteredUsernameHandler}></input>
+                <input className="bg-gray-50 border border-gray-300 rounded-lg" type="text" value={enteredUsername} onChange={EnteredUsernameHandler}></input>
                 <Welcome name={enteredUsername} />
             </form>
         </div>

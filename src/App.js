@@ -7,12 +7,13 @@ import ClickTracker from './components/ClickTracker.js';
 import InteractiveWelcome from './components/form/InteractiveWelcome.js';
 import Login from './components/form/Login.js';
 import TodoList from './components/list/TodoList';
+import Container from './components/containers/Container.js';
 
 class App extends React.Component {
     render() {
 
         return (
-            <div>
+            <Container>
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
@@ -22,7 +23,8 @@ class App extends React.Component {
                 <Login />
                 <TodoList />
               
-            </div>    
+              
+            </Container>    
         )
     }
 }

@@ -47,11 +47,11 @@ const Login = props => {
         return (
             <form>
                 <label>Insert your Username and Password:</label>
-                <input type="text" value={enteredName} onChange={nameHandler}></input>
-                <input type="password" value={enteredPassword} onChange={passwordHandler}></input>
+                <input className="bg-gray-50 border border-gray-300 rounded-lg" type="text" value={enteredName} onChange={nameHandler}></input>
+                <input className="bg-gray-50 border border-gray-300 rounded-lg" type="password" value={enteredPassword} onChange={passwordHandler}></input>
                 <div>
                     <label>Remember me</label>
-                    <input type="checkbox" checked={checked} onChange={checkHandler}></input>
+                    <input className="bg-gray-50 border border-gray-300 rounded-lg" type="checkbox" checked={checked} onChange={checkHandler}></input>
                     <LoginButton 
                         onLogin={loginHandler}
                         disabled={!enteredName || !enteredPassword}

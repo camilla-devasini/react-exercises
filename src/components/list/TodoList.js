@@ -39,12 +39,13 @@ const TodoList = props => {
         <div>
             <ul>
                 {items.map((item, index)=> 
-                        <li key={index}>{item}<button onClick={() => {deleteItemHandler(index)}}>Delete item</button></li>
+                        <li key={index}>{item}<button className="bg-red-500 hover:bg-blue-700 text-white"  onClick={() => {deleteItemHandler(index)}}>Delete item</button></li>
                 )}
             </ul>
-            <input type="text" onChange={inputChangeHandler} value={input}></input> 
-            <button onClick={addToListHandler}>Add to list</button>
-            <button onClick={resetHandler}>Clear list</button>
+            <input className="bg-gray-50 border border-gray-300 rounded-lg" type="text" onChange={inputChangeHandler} value={input}></input> 
+            <button className="bg-blue-500 hover:bg-blue-700 text-white" onClick={addToListHandler}>Add to list</button>
+            <br></br>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white" onClick={resetHandler}>Clear list</button>
         </div>
     )
 }
