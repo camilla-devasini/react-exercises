@@ -8,12 +8,23 @@ import Login from './components/form/Login.js';
 import SayHello from './components/helloTitle.js';
 import TodoList from './components/list/TodoList';
 import Welcome from './components/Welcome.js';
+import LanguageContext from "./components/context/LanguageContext";
+import { useState } from "react";
 
-class App extends React.Component {
-    render() {
 
+
+function App () {
+    const [Language, setLanguage] = useState();
+    const handleLanguage = (event) => {
+        setLanguage(event.target.value);
+    }
         return (
-            <Container title="My React App">
+            
+            <Container lang={Language} onLangChange={handleLanguage} title="My React App">
+                <LanguageContext.Provider value={Language}>
+                    <DisplayLanguage />
+                </LanguageContext.Provider>
+    
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
@@ -44,7 +55,8 @@ class App extends React.Component {
             </Container>    
         )
     }
-}
+
+
 
 export default App;
 
