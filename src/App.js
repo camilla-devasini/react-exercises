@@ -11,21 +11,25 @@ import TodoList from './components/list/TodoList';
 import Welcome from './components/Welcome.js';
 import LanguageContext from "./components/context/LanguageContext";
 import DisplayLanguage from './components/DisplayLanguage.js';
+import Sum from './components/Sum.js';
 
 
 
 function App () {
+
     const [Language, setLanguage] = useState();
     const handleLanguage = (event) => {
         setLanguage(event.target.value);
     }
-        return (
+
+    const numberArray = [1, 2, 3];
+        
+    return (
             
             <Container lang={Language} onLangChange={handleLanguage} title="My React App">
                 <LanguageContext.Provider value={Language}>
                     <DisplayLanguage />
                 </LanguageContext.Provider>
-    
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
@@ -53,6 +57,7 @@ function App () {
                         )
                     }
                 </TodoList>
+                <Sum numbers={numberArray}></Sum>
             </Container>    
         )
     }
