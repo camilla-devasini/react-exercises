@@ -13,7 +13,7 @@ class App extends React.Component {
     render() {
 
         return (
-            <Container>
+            <Container title="My React App">
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
