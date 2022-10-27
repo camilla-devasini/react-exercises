@@ -21,24 +21,26 @@ class App extends React.Component {
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login />
-                <TodoList render={
-                    ((items, deleteItemHandler) => 
-                        {
-                            return (
-                                <ul>
-                                    {items.map((item, index) => {
-                                        return (
-                                            <li key={index}>
-                                                {item}
-                                                <button className="bg-red-500 hover:bg-blue-700 text-white"
-                                                onClick={() => deleteItemHandler(index)}>Delete item</button>
-                                            </li>)
-                                    })}
-                                </ul>
-                            )      
-                        }         
-                    )
-                }></TodoList>
+                <TodoList>
+                    {
+                        ((items, deleteItemHandler) => 
+                            {
+                                return (
+                                    <ul>
+                                        {items.map((item, index) => {
+                                            return (
+                                                <li key={index}>
+                                                    {item}
+                                                    <button className="bg-red-500 hover:bg-blue-700 text-white"
+                                                    onClick={() => deleteItemHandler(index)}>Delete item</button>
+                                                </li>)
+                                        })}
+                                    </ul>
+                                )      
+                            }         
+                        )
+                    }
+                </TodoList>
             </Container>    
         )
     }

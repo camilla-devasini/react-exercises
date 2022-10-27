@@ -38,7 +38,7 @@ const TodoList = props => {
 
     return (
         <div>
-            {props.render(items, deleteItemHandler)} 
+            {props.children(items, deleteItemHandler)} 
             <input className="bg-gray-50 border border-gray-300 rounded-lg" type="text" onChange={inputChangeHandler} value={input}></input> 
             <button className="bg-blue-500 hover:bg-blue-700 text-white" onClick={addToListHandler}>Add to list</button>
             <br></br>
