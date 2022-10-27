@@ -23,7 +23,20 @@ function App () {
     }
 
     const numberArray = [1, 2, 3];
-        
+   
+    const [counter, setCounter] = useState(0);
+    
+    const clickHandler = () => {
+        setCounter ((prevState) => {
+            return prevState + 1
+        })
+    };
+
+   
+   const onCounterChange = () => {
+        setCounter(counter);
+    
+    }  
     return (
             
             <Container lang={Language} onLangChange={handleLanguage} title="My React App">
@@ -33,7 +46,7 @@ function App () {
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
-                <ClickCounter />
+                <ClickCounter onCounterChange={onCounterChange} onClickHandler={clickHandler} counter={counter}/>
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login />

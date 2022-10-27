@@ -1,19 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CounterButton from './CounterButton';
 
-const ClickCounter = () => {
-    const [counter, setCounter] = useState(0);
-    const clickHandler = () => {
-        setCounter ((prevState) => {
-            return prevState + 1
-        })
-    };
 
+const ClickCounter = (props) => {
+    const { onCounterChange } = props;
+    
+    useEffect( () => {
+        onCounterChange()
+
+    }, [props.counter])
+   
 
     return (
         <div>
-            <h1>{counter}</h1>
-            <CounterButton onClick={clickHandler}/>
+            <h1>{props.counter}</h1>
+            <CounterButton onClick={props.onClickHandler}/>
         </div>
     )
 }
