@@ -57,7 +57,7 @@ function App () {
                         )
                     }
                 </TodoList>
-                <Sum numbers={numberArray}></Sum>
+                <Sum />
             </Container>    
         )
     }
