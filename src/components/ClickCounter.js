@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CounterButton from './CounterButton';
 
-const ClickCounter = props => {
+const ClickCounter = () => {
     const [counter, setCounter] = useState(0);
     const clickHandler = () => {
         setCounter ((prevState) => {
