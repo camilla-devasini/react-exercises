@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from "react";
 import ClickCounter from './components/ClickCounter.js';
 import ClickTracker from './components/ClickTracker.js';
 import Container from './components/containers/Container.js';
@@ -9,7 +10,7 @@ import SayHello from './components/helloTitle.js';
 import TodoList from './components/list/TodoList';
 import Welcome from './components/Welcome.js';
 import LanguageContext from "./components/context/LanguageContext";
-import { useState } from "react";
+import DisplayLanguage from './components/DisplayLanguage.js';
 
 
 
