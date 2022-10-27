@@ -1,9 +1,8 @@
 
-const Container = ({children, ...props}) => {
+const Container = ({children}) => {
 
     return (
         <div className="bg-white border border-red-500">
-           {props.title}
            {children}
         </div>
     )
