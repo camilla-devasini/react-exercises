@@ -1,13 +1,13 @@
 import React from 'react';
-import SayHello from './components/helloTitle.js';
-import Welcome from './components/Welcome.js';
-import Counter from './components/Counter.js';
 import ClickCounter from './components/ClickCounter.js';
 import ClickTracker from './components/ClickTracker.js';
+import Container from './components/containers/Container.js';
+import Counter from './components/Counter.js';
 import InteractiveWelcome from './components/form/InteractiveWelcome.js';
 import Login from './components/form/Login.js';
+import SayHello from './components/helloTitle.js';
 import TodoList from './components/list/TodoList';
-import Container from './components/containers/Container.js';
+import Welcome from './components/Welcome.js';
 
 class App extends React.Component {
     render() {
@@ -21,9 +21,24 @@ class App extends React.Component {
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login />
-                <TodoList />
-              
-              
+                <TodoList render={
+                    ((items, deleteItemHandler) => 
+                        {
+                            return (
+                                <ul>
+                                    {items.map((item, index) => {
+                                        return (
+                                            <li key={index}>
+                                                {item}
+                                                <button className="bg-red-500 hover:bg-blue-700 text-white"
+                                                onClick={() => deleteItemHandler(index)}>Delete item</button>
+                                            </li>)
+                                    })}
+                                </ul>
+                            )      
+                        }         
+                    )
+                }></TodoList>
             </Container>    
         )
     }

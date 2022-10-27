@@ -3,6 +3,7 @@
 // in the items state variable. The items state variable should be an array of strings.
 // The TodoList component should also contain an input tag and a button. When the button is clicked,
 // the event handler should add the value of the input tag to the items array.
+import { render } from '@testing-library/react';
 import { useState } from 'react';
 
 const TodoList = props => {
@@ -37,11 +38,7 @@ const TodoList = props => {
 
     return (
         <div>
-            <ul>
-                {items.map((item, index)=> 
-                        <li key={index}>{item}<button className="bg-red-500 hover:bg-blue-700 text-white"  onClick={() => {deleteItemHandler(index)}}>Delete item</button></li>
-                )}
-            </ul>
+            {props.render(items, deleteItemHandler)} 
             <input className="bg-gray-50 border border-gray-300 rounded-lg" type="text" onChange={inputChangeHandler} value={input}></input> 
             <button className="bg-blue-500 hover:bg-blue-700 text-white" onClick={addToListHandler}>Add to list</button>
             <br></br>
