@@ -12,6 +12,7 @@ import Welcome from './components/Welcome.js';
 import LanguageContext from "./components/context/LanguageContext";
 import DisplayLanguage from './components/DisplayLanguage.js';
 import Sum from './components/Sum.js';
+import GithubUsers from './components/github/GithubUsers.js';
 
 
 
@@ -25,14 +26,11 @@ function App () {
     const numberArray = [1, 2, 3];
    
     const [counter, setCounter] = useState(0);
-    
     const clickHandler = () => {
         setCounter ((prevState) => {
             return prevState + 1
         })
     };
-
-   
    const onCounterChange = () => {
         setCounter(counter);
     
@@ -71,6 +69,7 @@ function App () {
                     }
                 </TodoList>
                 <Sum />
+                <GithubUsers username="camilla-devasini"/>
             </Container>    
         )
     }
