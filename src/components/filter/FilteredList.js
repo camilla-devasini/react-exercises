@@ -36,7 +36,7 @@ function FilteredList() {
     return (
         <div>The users with age higher than 18 are:
             {filtered.map(filteredData => (
-                <li>{filteredData}</li>
+                <li key={filteredData.id}>{filteredData}</li>
             ))}
         </div>
     )
