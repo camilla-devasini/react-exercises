@@ -14,7 +14,8 @@ import DisplayLanguage from './components/DisplayLanguage.js';
 import Sum from './components/Sum.js';
 import GithubUser from './components/github/GithubUser.js';
 import GithubUserList from './components/github/GithubUserList.js';
-import MyCounter from './components/hooks/CounterUsingHook.js';
+import CarDetails from './components/ref/CarDetails.js';
+
 
 
 
@@ -44,7 +45,8 @@ function App () {
                 <LanguageContext.Provider value={Language}>
                     <DisplayLanguage />
                 </LanguageContext.Provider>
-                <MyCounter />
+                <CarDetails />
+        
                 <GithubUserList />
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
