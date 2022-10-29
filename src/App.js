@@ -17,7 +17,7 @@ import GithubUserList from './components/github/GithubUserList.js';
 import CarDetails from './components/ref/CarDetails.js';
 import ComponentUsingHook from './components/hooks/ComponentUsingHook.js';
 import FilteredList from './components/filter/FilteredList.js';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import ShowGithubUser from './components/ ShowGithubUser.js';
 
 
@@ -51,6 +51,8 @@ function App () {
             <LanguageContext.Provider value={Language}>
                 <DisplayLanguage />
             </LanguageContext.Provider>
+
+            <Link to="/">HomePage</Link> | <Link to="/counter">Counter</Link> | <Link to="/users/:username" username="camilla-devasini">Username</Link> 
             
             <Routes>
                 <Route path="/" element={<Welcome name="Camilla" />} />
