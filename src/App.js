@@ -17,12 +17,14 @@ import GithubUserList from './components/github/GithubUserList.js';
 import CarDetails from './components/ref/CarDetails.js';
 import ComponentUsingHook from './components/hooks/ComponentUsingHook.js';
 import FilteredList from './components/filter/FilteredList.js';
+import { Route, Routes } from 'react-router-dom';
 
 
 
 
 
 function App () {
+    
 
     const [Language, setLanguage] = useState();
     const handleLanguage = (event) => {
@@ -42,46 +44,52 @@ function App () {
     
     }  
     return (
+       
             
-            <Container lang={Language} onLangChange={handleLanguage} title="My React App">
-                <LanguageContext.Provider value={Language}>
-                    <DisplayLanguage />
-                </LanguageContext.Provider>
-                <CarDetails />
-                <GithubUserList />
-                <SayHello />
-                <Welcome name={"Jhon"} age="18" />
-                <FilteredList />
-                <Counter initialValue={0} increment={1} interval={1000} />
-                <ClickCounter onCounterChange={onCounterChange} onClickHandler={clickHandler} counter={counter}/>
-                <ClickTracker />
-                <InteractiveWelcome />
-                <Login />
-                <TodoList>
-                    {
-                        ((items, deleteItemHandler) => 
-                            {
-                                return (
-                                    <ul>
-                                        {items.map((item, index) => {
-                                            return (
-                                                <li key={index}>
-                                                    {item}
-                                                    <button className="bg-red-500 hover:bg-blue-700 text-white"
-                                                    onClick={() => deleteItemHandler(index)}>Delete item</button>
-                                                </li>)
-                                        })}
-                                    </ul>
-                                )      
-                            }         
-                        )
-                    }
-                </TodoList>
-                <Sum />
-                <GithubUser username="camilla-devasini"/>
-                <ComponentUsingHook/>
-               
-            </Container>    
+        <Container lang={Language} onLangChange={handleLanguage} title="My React App">
+            <LanguageContext.Provider value={Language}>
+                <DisplayLanguage />
+            </LanguageContext.Provider>
+            
+            <Routes>
+                <Route path="/" element={<Welcome name="Camilla" />} />
+            </Routes>
+            {/* 
+            <CarDetails />
+            <GithubUserList />
+            <SayHello />
+            {/* <Welcome name={"Jhon"} age="18" /> */}
+            {/* <FilteredList />
+            <Counter initialValue={0} increment={1} interval={1000} />
+            <ClickCounter onCounterChange={onCounterChange} onClickHandler={clickHandler} counter={counter}/>
+            <ClickTracker />
+            <InteractiveWelcome />
+            <Login />
+            <TodoList>
+                {
+                    ((items, deleteItemHandler) => 
+                        {
+                            return (
+                                <ul>
+                                    {items.map((item, index) => {
+                                        return (
+                                            <li key={index}>
+                                                {item}
+                                                <button className="bg-red-500 hover:bg-blue-700 text-white"
+                                                onClick={() => deleteItemHandler(index)}>Delete item</button>
+                                            </li>)
+                                    })}
+                                </ul>
+                            )      
+                        }         
+                    )
+                }
+            </TodoList>
+            <Sum />
+            <GithubUser username="camilla-devasini"/>
+            <ComponentUsingHook/> */}
+        
+        </Container>    
         )
     }
 

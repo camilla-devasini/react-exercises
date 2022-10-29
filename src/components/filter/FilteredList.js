@@ -28,15 +28,15 @@ function FilteredList() {
 
     function filterAge() {
         const adults = usersList.filter(user => user.age > 18);
-        return adults.map(adult => adult.name)
+        return adults.map((adult)=> adult.name)
     }
 
     const filtered = useMemo( () => filterAge(), [usersList])
 
     return (
         <div>The users with age higher than 18 are:
-            {filtered.map(filteredData => (
-                <li>{filteredData}</li>
+            {filtered.map((filteredData) => (
+                <li key={filteredData.id}>{filteredData}</li>
             ))}
         </div>
     )
