@@ -57,7 +57,9 @@ function App () {
             <Routes>
                 <Route path="/" element={<Welcome name="Camilla" />} />
                 <Route path="/counter" element={<Counter />} />
-                <Route path="users/:username" element={<ShowGithubUser />} />
+                <Route path="/users" element= {<GithubUserList />}>
+                    <Route path=":username" element= {<ShowGithubUser/>} />
+                </Route>
                 <Route path="*" element= {<p>Results not found for the current URL</p>} />
             </Routes>
             
