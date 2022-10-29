@@ -15,6 +15,7 @@ import Sum from './components/Sum.js';
 import GithubUser from './components/github/GithubUser.js';
 import GithubUserList from './components/github/GithubUserList.js';
 import CarDetails from './components/ref/CarDetails.js';
+import ComponentUsingHook from './components/hooks/ComponentUsingHook.js';
 
 
 
@@ -46,7 +47,6 @@ function App () {
                     <DisplayLanguage />
                 </LanguageContext.Provider>
                 <CarDetails />
-        
                 <GithubUserList />
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
@@ -77,6 +77,7 @@ function App () {
                 </TodoList>
                 <Sum />
                 <GithubUser username="camilla-devasini"/>
+                <ComponentUsingHook/>
             </Container>    
         )
     }
