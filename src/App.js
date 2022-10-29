@@ -16,6 +16,7 @@ import GithubUser from './components/github/GithubUser.js';
 import GithubUserList from './components/github/GithubUserList.js';
 import CarDetails from './components/ref/CarDetails.js';
 import ComponentUsingHook from './components/hooks/ComponentUsingHook.js';
+import FilteredList from './components/filter/FilteredList.js';
 
 
 
@@ -50,6 +51,7 @@ function App () {
                 <GithubUserList />
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
+                <FilteredList />
                 <Counter initialValue={0} increment={1} interval={1000} />
                 <ClickCounter onCounterChange={onCounterChange} onClickHandler={clickHandler} counter={counter}/>
                 <ClickTracker />
@@ -78,6 +80,7 @@ function App () {
                 <Sum />
                 <GithubUser username="camilla-devasini"/>
                 <ComponentUsingHook/>
+               
             </Container>    
         )
     }
