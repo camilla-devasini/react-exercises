@@ -1,28 +1,26 @@
 import LanguageContext from "./context/LanguageContext";
+import { useContext } from "react";
 
-function DisplayLanguage () {
+function DisplayLanguage() {
+    const selectedLanguage = useContext(LanguageContext);
     return (
-        <LanguageContext.Consumer>
-            {(Language) => {
-                return <h1>{Language}</h1>
-            }}
-        </LanguageContext.Consumer>
+        <h1>{selectedLanguage}</h1>
     )
 }
-
 
 export default DisplayLanguage;
 
 
 
-// OPPURE USANDO useContext HOOK:
 
-// import { useContext } from "react";
+// CON LANGUAGE.CONTEX.CONSUMER ERA:
 
-// function DisplayLanguage() {
-//     const selectedLanguage = useContext(LanguageContext);
+// function DisplayLanguage () {
 //     return (
-//         <h1>{selectedLanguage}</h1>
+//         <LanguageContext.Consumer>
+//             {(Language) => {
+//                 return <h1>{Language}</h1>
+//             }}
+//         </LanguageContext.Consumer>
 //     )
-// } 
-// export default DisplayLanguage;   
+// }
