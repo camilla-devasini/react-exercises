@@ -18,6 +18,7 @@ import CarDetails from './components/ref/CarDetails.js';
 import ComponentUsingHook from './components/hooks/ComponentUsingHook.js';
 import FilteredList from './components/filter/FilteredList.js';
 import { Route, Routes } from 'react-router-dom';
+import ShowGithubUser from './components/ ShowGithubUser.js';
 
 
 
@@ -54,6 +55,7 @@ function App () {
             <Routes>
                 <Route path="/" element={<Welcome name="Camilla" />} />
                 <Route path="/counter" element={<Counter />} />
+                <Route path="users/:username" element={<ShowGithubUser />} />
             </Routes>
             
             {/* 
