@@ -53,7 +53,9 @@ function App () {
             
             <Routes>
                 <Route path="/" element={<Welcome name="Camilla" />} />
+                <Route path="/counter" element={<Counter />} />
             </Routes>
+            
             {/* 
             <CarDetails />
             <GithubUserList />
