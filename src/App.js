@@ -12,7 +12,9 @@ import Welcome from './components/Welcome.js';
 import LanguageContext from "./components/context/LanguageContext";
 import DisplayLanguage from './components/DisplayLanguage.js';
 import Sum from './components/Sum.js';
-import GithubUsers from './components/github/GithubUsers.js';
+import GithubUser from './components/github/GithubUser.js';
+import GithubUserList from './components/github/GithubUserList.js';
+
 
 
 
@@ -41,6 +43,7 @@ function App () {
                 <LanguageContext.Provider value={Language}>
                     <DisplayLanguage />
                 </LanguageContext.Provider>
+                <GithubUserList />
                 <SayHello />
                 <Welcome name={"Jhon"} age="18" />
                 <Counter initialValue={0} increment={1} interval={1000} />
@@ -69,7 +72,7 @@ function App () {
                     }
                 </TodoList>
                 <Sum />
-                <GithubUsers username="camilla-devasini"/>
+                <GithubUser username="camilla-devasini"/>
             </Container>    
         )
     }
