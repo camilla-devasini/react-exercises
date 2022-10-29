@@ -4,7 +4,7 @@
 // The usernames should be added to the array using an input field and a button.
 import { useState } from "react";
 import GithubUser from "./GithubUser";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 function GithubUserList() {
@@ -39,8 +39,11 @@ function GithubUserList() {
                 {users.map((username, index) => { 
                     return (
                         // <GithubUser username={user} key={index} />
-                        <div key={index}>
-                            <Link to={username}>{username}</Link>
+                        <div>
+                            <div key={index}>
+                                <Link to={username}>{username}</Link>
+                            </div>
+                            <Outlet />
                         </div>
                     )
                 })}
