@@ -4,7 +4,7 @@ import useGithubUserSWR from "../hooks/useGithubUserSWR";
 
 
 function GithubUser ({username}) {
-    const { data, error, loading } = useGithubUserSWR({username});
+    const { data, error, loading, onRefresh } = useGithubUserSWR({username});
     // data è un oggetto, dopo non posso usare il metodo map degli array...
     
     return (
@@ -15,12 +15,13 @@ function GithubUser ({username}) {
                 <div>
                         <p>{data.name}</p>
                         <p>{data.login}</p>
-                        <p>{data.id}</p>
-                </div>
+                        <p>{data.id}</p> 
+                        <button onClick={onRefresh}>Refresh</button>
+                </div> 
                 
-                
-              
             )}
+            
+            
         </div> 
     )
 }
