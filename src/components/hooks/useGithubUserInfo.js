@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-
+// HOOK PER FETCH TRAMITE USE EFFECT
 function useGithubUser(username) {
     
     const [data, setData] = useState(null);

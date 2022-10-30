@@ -24,6 +24,7 @@ import ShowGithubUser from './components/ ShowGithubUser.js';
 
 
 
+
 function App () {
     
 
@@ -51,6 +52,7 @@ function App () {
             <LanguageContext.Provider value={Language}>
                 <DisplayLanguage />
             </LanguageContext.Provider>
+          
 
             <Link to="/">HomePage</Link> | <Link to="/counter">Counter</Link> | <Link to="/users/:username" username="camilla-devasini">Username</Link> 
             
